@@ -1,4 +1,4 @@
-# /ofd.init - Clone and validate an operator repository
+# /oape.init - Clone and validate an operator repository
 
 ## Purpose
 
@@ -26,10 +26,10 @@ BASE_BRANCH=$(echo "$ARGUMENTS" | awk '{print $2}')
 
 if [ -z "$GIT_URL" ] || [ -z "$BASE_BRANCH" ]; then
   echo "PRECHECK FAILED: Both a git URL and a base branch are required."
-  echo "Usage: /ofd.init <repo-url> <base-branch>"
+  echo "Usage: /oape.init <repo-url> <base-branch>"
   echo ""
   echo "Example:"
-  echo "  /ofd.init https://github.com/openshift/cert-manager-operator main"
+  echo "  /oape.init https://github.com/openshift/cert-manager-operator main"
   exit 1
 fi
 

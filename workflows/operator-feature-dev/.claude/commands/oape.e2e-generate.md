@@ -1,4 +1,4 @@
-# /ofd.e2e-generate - Generate E2E test artifacts from git diff
+# /oape.e2e-generate - Generate E2E test artifacts from git diff
 
 ## Purpose
 
@@ -29,7 +29,7 @@ BASE_BRANCH="$1"
 
 if [ -z "$BASE_BRANCH" ]; then
   echo "PRECHECK FAILED: No base branch provided."
-  echo "Usage: /ofd.e2e-generate <base-branch>"
+  echo "Usage: /oape.e2e-generate <base-branch>"
   exit 1
 fi
 

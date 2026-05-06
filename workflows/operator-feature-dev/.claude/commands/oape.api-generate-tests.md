@@ -1,4 +1,4 @@
-# /ofd.api-generate-tests - Generate integration tests for API types
+# /oape.api-generate-tests - Generate integration tests for API types
 
 ## Purpose
 
@@ -46,7 +46,7 @@ TARGET_PATH="$ARGUMENTS"
 
 if [ -z "$TARGET_PATH" ]; then
   echo "PRECHECK FAILED: No target path provided."
-  echo "Usage: /ofd.api-generate-tests <path-to-types-file-or-api-directory>"
+  echo "Usage: /oape.api-generate-tests <path-to-types-file-or-api-directory>"
   exit 1
 fi
 ```

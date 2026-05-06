@@ -2,14 +2,14 @@
 
 Multi-PR OpenShift operator feature development from Enhancement Proposals:
 
-1. **Init** (`/ofd.init`) — Clone repo, validate operator, detect framework
-2. **API Generate** (`/ofd.api-generate`) — Generate API type definitions from EP
-3. **API Generate Tests** (`/ofd.api-generate-tests`) — Generate integration tests for API types
-4. **Review** (`/ofd.review`) — Review and auto-fix issues
-5. **PR** (`/ofd.pr`) — Create pull request
-6. **API Implement** (`/ofd.api-implement`) — Generate controller/reconciler code
-7. **E2E Generate** (`/ofd.e2e-generate`) — Generate E2E test artifacts
-8. **Speedrun** (`/ofd.speedrun`) — Run all remaining phases without stopping
+1. **Init** (`/oape.init`) — Clone repo, validate operator, detect framework
+2. **API Generate** (`/oape.api-generate`) — Generate API type definitions from EP
+3. **API Generate Tests** (`/oape.api-generate-tests`) — Generate integration tests for API types
+4. **Review** (`/oape.review`) — Review and auto-fix issues
+5. **PR** (`/oape.pr`) — Create pull request
+6. **API Implement** (`/oape.api-implement`) — Generate controller/reconciler code
+7. **E2E Generate** (`/oape.e2e-generate`) — Generate E2E test artifacts
+8. **Speedrun** (`/oape.speedrun`) — Run all remaining phases without stopping
 9. **Summary** — Synthesize all artifacts into a final status report
 
 Commands handle atomic operations. The controller skill manages phase

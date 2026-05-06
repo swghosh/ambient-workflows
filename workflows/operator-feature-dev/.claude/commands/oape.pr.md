@@ -1,4 +1,4 @@
-# /ofd.pr - Create a draft pull request
+# /oape.pr - Create a draft pull request
 
 ## Purpose
 

@@ -1,4 +1,4 @@
-# /ofd.speedrun - Run all remaining phases without stopping
+# /oape.speedrun - Run all remaining phases without stopping
 
 ## Purpose
 
@@ -36,17 +36,17 @@ context, then pick the first phase that is NOT done.
 
 | Phase | Command | "Done" signal |
 | --- | --- | --- |
-| init | `/ofd.init` | `artifacts/operator-feature-dev/init-summary.md` exists |
-| api-generate | `/ofd.api-generate` | `artifacts/operator-feature-dev/api/generation-summary.md` exists |
-| api-generate-tests | `/ofd.api-generate-tests` | `artifacts/operator-feature-dev/api/test-generation-summary.md` exists |
-| api-review | `/ofd.review` | `artifacts/operator-feature-dev/api/review-verdict.md` exists |
-| api-pr | `/ofd.pr` | PR #1 URL has been shared in conversation |
-| api-implement | `/ofd.api-implement` | `artifacts/operator-feature-dev/impl/implementation-summary.md` exists |
-| impl-review | `/ofd.review` | `artifacts/operator-feature-dev/impl/review-verdict.md` exists |
-| impl-pr | `/ofd.pr` | PR #2 URL has been shared in conversation |
-| e2e-generate | `/ofd.e2e-generate` | `artifacts/operator-feature-dev/e2e/generation-summary.md` exists |
-| e2e-review | `/ofd.review` | `artifacts/operator-feature-dev/e2e/review-verdict.md` exists |
-| e2e-pr | `/ofd.pr` | PR #3 URL has been shared in conversation |
+| init | `/oape.init` | `artifacts/operator-feature-dev/init-summary.md` exists |
+| api-generate | `/oape.api-generate` | `artifacts/operator-feature-dev/api/generation-summary.md` exists |
+| api-generate-tests | `/oape.api-generate-tests` | `artifacts/operator-feature-dev/api/test-generation-summary.md` exists |
+| api-review | `/oape.review` | `artifacts/operator-feature-dev/api/review-verdict.md` exists |
+| api-pr | `/oape.pr` | PR #1 URL has been shared in conversation |
+| api-implement | `/oape.api-implement` | `artifacts/operator-feature-dev/impl/implementation-summary.md` exists |
+| impl-review | `/oape.review` | `artifacts/operator-feature-dev/impl/review-verdict.md` exists |
+| impl-pr | `/oape.pr` | PR #2 URL has been shared in conversation |
+| e2e-generate | `/oape.e2e-generate` | `artifacts/operator-feature-dev/e2e/generation-summary.md` exists |
+| e2e-review | `/oape.review` | `artifacts/operator-feature-dev/e2e/review-verdict.md` exists |
+| e2e-pr | `/oape.pr` | PR #3 URL has been shared in conversation |
 | summary | summary skill | `artifacts/operator-feature-dev/summary.md` exists |
 
 ### Rules
@@ -59,7 +59,7 @@ context, then pick the first phase that is NOT done.
 
 ## Execute a Phase
 
-1. **Announce** the phase to the user (e.g., "Starting /ofd.api-generate — speedrun mode.")
+1. **Announce** the phase to the user (e.g., "Starting /oape.api-generate — speedrun mode.")
 2. **Run** the command for the current phase
 3. When the command completes, continue to the next phase
 
@@ -170,13 +170,13 @@ If you stop early due to escalation (before summary runs), present:
 **From the beginning (fresh start):**
 
 ```text
-/ofd.speedrun https://github.com/openshift/enhancements/pull/1234 https://github.com/openshift/cert-manager-operator main
+/oape.speedrun https://github.com/openshift/enhancements/pull/1234 https://github.com/openshift/cert-manager-operator main
 ```
 
 **Mid-workflow (some phases already done):**
 
 ```text
-/ofd.speedrun
+/oape.speedrun
 ```
 
 The command detects existing artifacts and picks up from the next incomplete phase.
@@ -184,5 +184,5 @@ The command detects existing artifacts and picks up from the next incomplete pha
 **With an explicit starting point:**
 
 ```text
-/ofd.speedrun Start from /ofd.api-implement — I already have the API types
+/oape.speedrun Start from /oape.api-implement — I already have the API types
 ```

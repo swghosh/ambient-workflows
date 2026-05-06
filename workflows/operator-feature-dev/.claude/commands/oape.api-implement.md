@@ -1,4 +1,4 @@
-# /ofd.api-implement - Generate controller/reconciler implementation
+# /oape.api-implement - Generate controller/reconciler implementation
 
 ## Purpose
 
@@ -37,7 +37,7 @@ fi
 
 if [ -z "$ENHANCEMENT_PR" ] && [ -z "$DESIGN_DOC_URL" ]; then
   echo "PRECHECK FAILED: No input provided."
-  echo "Usage: /ofd.api-implement <EP_URL> [--design-doc <GIST_URL>]"
+  echo "Usage: /oape.api-implement <EP_URL> [--design-doc <GIST_URL>]"
   exit 1
 fi
 
@@ -157,7 +157,7 @@ API_TYPES=$(find "$REPO_ROOT" -type f \( -name 'types*.go' -o -name '*_types.go'
 
 if [ -z "$API_TYPES" ]; then
   echo "PRECHECK FAILED: No API type definitions found."
-  echo "Run /ofd.api-generate first to create the API types."
+  echo "Run /oape.api-generate first to create the API types."
   exit 1
 fi
 
@@ -517,7 +517,7 @@ Next Steps:
 4. **Missing tools**: `gh`, `go`, `git`, or `make` not installed
 5. **Not authenticated**: `gh` not authenticated
 6. **Not an operator repo**: No go.mod or unrecognized operator type
-7. **No API types**: Types don't exist (run `/ofd.api-generate` first)
+7. **No API types**: Types don't exist (run `/oape.api-generate` first)
 8. **Input not accessible**: EP or design document cannot be fetched
 9. **No implementation requirements**: Input sources don't describe controller
    behavior

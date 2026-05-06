@@ -18,14 +18,14 @@ workflows/operator-feature-dev/
 │   └── ambient.json                    # Workflow configuration
 ├── .claude/
 │   ├── commands/                       # Atomic, argument-driven operations
-│   │   ├── ofd.init.md                 # Clone and validate operator repo
-│   │   ├── ofd.api-generate.md         # Generate API types from EP
-│   │   ├── ofd.api-generate-tests.md   # Generate integration tests
-│   │   ├── ofd.api-implement.md        # Generate controller/reconciler
-│   │   ├── ofd.e2e-generate.md         # Generate E2E test artifacts
-│   │   ├── ofd.review.md              # Code review with auto-fix
-│   │   ├── ofd.pr.md                  # Create pull request
-│   │   └── ofd.speedrun.md            # Autonomous full pipeline
+│   │   ├── oape.init.md                 # Clone and validate operator repo
+│   │   ├── oape.api-generate.md         # Generate API types from EP
+│   │   ├── oape.api-generate-tests.md   # Generate integration tests
+│   │   ├── oape.api-implement.md        # Generate controller/reconciler
+│   │   ├── oape.e2e-generate.md         # Generate E2E test artifacts
+│   │   ├── oape.review.md              # Code review with auto-fix
+│   │   ├── oape.pr.md                  # Create pull request
+│   │   └── oape.speedrun.md            # Autonomous full pipeline
 │   └── skills/                         # Orchestration + cross-cutting
 │       ├── controller/SKILL.md         # Phase transition orchestrator
 │       ├── effective-go/SKILL.md       # Go best practices
@@ -38,7 +38,7 @@ workflows/operator-feature-dev/
 
 1. Start the workflow in ACP
 2. Provide an Enhancement Proposal PR URL and operator repo URL
-3. The controller guides you through each phase, or use `/ofd.speedrun` for autonomous execution
+3. The controller guides you through each phase, or use `/oape.speedrun` for autonomous execution
 
 ### Example Session
 
@@ -46,34 +46,34 @@ workflows/operator-feature-dev/
 User: I want to implement EP https://github.com/openshift/enhancements/pull/1234
       in https://github.com/openshift/cert-manager-operator, base branch main
 
-Atlas: [runs /ofd.init, then guides through each phase]
+Atlas: [runs /oape.init, then guides through each phase]
 ```
 
 ### Speedrun (Autonomous)
 
 ```text
-/ofd.speedrun https://github.com/openshift/enhancements/pull/1234 https://github.com/openshift/cert-manager-operator main
+/oape.speedrun https://github.com/openshift/enhancements/pull/1234 https://github.com/openshift/cert-manager-operator main
 ```
 
 ## Commands
 
 | Command | Arguments | Purpose |
 | --- | --- | --- |
-| `/ofd.init` | `<repo-url> <base-branch>` | Clone repo, detect framework |
-| `/ofd.api-generate` | `<ep-url> [--design-doc <gist-url>]` | Generate API type definitions |
-| `/ofd.api-generate-tests` | `<path-to-types>` | Generate integration tests |
-| `/ofd.api-implement` | `<ep-url> [--design-doc <gist-url>]` | Generate controller/reconciler |
-| `/ofd.e2e-generate` | `<base-branch>` | Generate E2E test artifacts |
-| `/ofd.review` | `<base-branch>` | Code review with auto-fix |
-| `/ofd.pr` | `<base-branch>` | Create draft pull request |
-| `/ofd.speedrun` | `<ep-url> <repo-url> <base-branch>` | Run all phases autonomously |
+| `/oape.init` | `<repo-url> <base-branch>` | Clone repo, detect framework |
+| `/oape.api-generate` | `<ep-url> [--design-doc <gist-url>]` | Generate API type definitions |
+| `/oape.api-generate-tests` | `<path-to-types>` | Generate integration tests |
+| `/oape.api-implement` | `<ep-url> [--design-doc <gist-url>]` | Generate controller/reconciler |
+| `/oape.e2e-generate` | `<base-branch>` | Generate E2E test artifacts |
+| `/oape.review` | `<base-branch>` | Code review with auto-fix |
+| `/oape.pr` | `<base-branch>` | Create draft pull request |
+| `/oape.speedrun` | `<ep-url> <repo-url> <base-branch>` | Run all phases autonomously |
 
 ## Workflow Phases
 
 ```text
-PR #1: /ofd.init → /ofd.api-generate → /ofd.api-generate-tests → /ofd.review → /ofd.pr
-PR #2: /ofd.api-implement → /ofd.review → /ofd.pr
-PR #3: /ofd.e2e-generate → /ofd.review → /ofd.pr
+PR #1: /oape.init → /oape.api-generate → /oape.api-generate-tests → /oape.review → /oape.pr
+PR #2: /oape.api-implement → /oape.review → /oape.pr
+PR #3: /oape.e2e-generate → /oape.review → /oape.pr
 Final: summary skill
 ```
 

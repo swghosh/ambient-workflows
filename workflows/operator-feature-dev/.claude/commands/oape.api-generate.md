@@ -1,4 +1,4 @@
-# /ofd.api-generate - Generate API type definitions from an Enhancement Proposal
+# /oape.api-generate - Generate API type definitions from an Enhancement Proposal
 
 ## Purpose
 
@@ -38,7 +38,7 @@ fi
 
 if [ -z "$ENHANCEMENT_PR" ] && [ -z "$DESIGN_DOC_URL" ]; then
   echo "PRECHECK FAILED: No input provided."
-  echo "Usage: /ofd.api-generate <EP_URL> [--design-doc <GIST_URL>]"
+  echo "Usage: /oape.api-generate <EP_URL> [--design-doc <GIST_URL>]"
   exit 1
 fi
 

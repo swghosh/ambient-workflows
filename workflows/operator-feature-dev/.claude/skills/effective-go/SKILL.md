@@ -10,9 +10,9 @@ Go documentation and Go community standards.
 
 ## When This Skill Applies
 
-- Generating API type definitions (`/ofd.api-generate`)
-- Generating controller/reconciler code (`/ofd.api-implement`)
-- Generating tests (`/ofd.api-generate-tests`, `/ofd.e2e-generate`)
+- Generating API type definitions (`/oape.api-generate`)
+- Generating controller/reconciler code (`/oape.api-implement`)
+- Generating tests (`/oape.api-generate-tests`, `/oape.e2e-generate`)
 - Any Go code generation or modification
 
 ## Guidelines
@@ -117,9 +117,9 @@ import (
 
 This skill is referenced by:
 
-- `/ofd.api-generate` — when generating API type definitions
-- `/ofd.api-implement` — when generating controller code
-- `/ofd.api-generate-tests` — when generating test code
-- `/ofd.e2e-generate` — when generating E2E test code
+- `/oape.api-generate` — when generating API type definitions
+- `/oape.api-implement` — when generating controller code
+- `/oape.api-generate-tests` — when generating test code
+- `/oape.e2e-generate` — when generating E2E test code
 
 All Go code generation MUST follow these guidelines.

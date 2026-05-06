@@ -14,7 +14,7 @@ phases. The workflow produces 3 Pull Requests from an Enhancement Proposal.
 Standard file locations (from workflow root):
 
 - Config: `.ambient/ambient.json`
-- Commands: `.claude/commands/ofd.*.md`
+- Commands: `.claude/commands/oape.*.md`
 - Skills: `.claude/skills/*/SKILL.md`
 - Outputs: `artifacts/operator-feature-dev/`
 
@@ -35,23 +35,23 @@ The workflow is grouped into 3 PR deliverables plus a final summary.
 
 ### PR #1: API Type Definitions
 
-1. **Init** (`/ofd.init`) — Clone the operator repo, validate it, detect framework
-2. **API Generate** (`/ofd.api-generate`) — Generate API type definitions from EP
-3. **API Generate Tests** (`/ofd.api-generate-tests`) — Generate integration tests
-4. **Review** (`/ofd.review`) — Review and auto-fix API types and tests
-5. **PR** (`/ofd.pr`) — Create PR #1
+1. **Init** (`/oape.init`) — Clone the operator repo, validate it, detect framework
+2. **API Generate** (`/oape.api-generate`) — Generate API type definitions from EP
+3. **API Generate Tests** (`/oape.api-generate-tests`) — Generate integration tests
+4. **Review** (`/oape.review`) — Review and auto-fix API types and tests
+5. **PR** (`/oape.pr`) — Create PR #1
 
 ### PR #2: Controller Implementation
 
-6. **API Implement** (`/ofd.api-implement`) — Generate controller/reconciler code
-7. **Review** (`/ofd.review`) — Review and auto-fix controller code
-8. **PR** (`/ofd.pr`) — Create PR #2
+6. **API Implement** (`/oape.api-implement`) — Generate controller/reconciler code
+7. **Review** (`/oape.review`) — Review and auto-fix controller code
+8. **PR** (`/oape.pr`) — Create PR #2
 
 ### PR #3: E2E Tests
 
-9. **E2E Generate** (`/ofd.e2e-generate`) — Generate E2E test artifacts
-10. **Review** (`/ofd.review`) — Review and auto-fix E2E tests
-11. **PR** (`/ofd.pr`) — Create PR #3
+9. **E2E Generate** (`/oape.e2e-generate`) — Generate E2E test artifacts
+10. **Review** (`/oape.review`) — Review and auto-fix E2E tests
+11. **PR** (`/oape.pr`) — Create PR #3
 
 ### Final
 
@@ -95,19 +95,19 @@ After presenting results, consider what just happened, then offer options:
 
 **Skipping forward** — sometimes phases aren't needed:
 
-- Review says API types are solid → offer `/ofd.pr` directly
-- The user already has tests → skip `/ofd.api-generate-tests`
+- Review says API types are solid → offer `/oape.pr` directly
+- The user already has tests → skip `/oape.api-generate-tests`
 
 **Going back** — sometimes earlier work needs revision:
 
-- Review finds API types are inadequate → offer `/ofd.api-generate` again
-- Review finds controller has issues → offer `/ofd.api-implement` again
-- Build failures after api-implement → offer `/ofd.api-implement` to regenerate
+- Review finds API types are inadequate → offer `/oape.api-generate` again
+- Review finds controller has issues → offer `/oape.api-implement` again
+- Build failures after api-implement → offer `/oape.api-implement` to regenerate
 
 **Between PRs** — after creating a PR, guide the transition:
 
-- After PR #1 created → recommend starting PR #2 with `/ofd.api-implement`
-- After PR #2 created → recommend starting PR #3 with `/ofd.e2e-generate`
+- After PR #1 created → recommend starting PR #2 with `/oape.api-implement`
+- After PR #2 created → recommend starting PR #3 with `/oape.e2e-generate`
 - After PR #3 created → recommend running the summary skill
 
 **Ending early** — not every EP needs the full pipeline:
@@ -115,10 +115,10 @@ After presenting results, consider what just happened, then offer options:
 - The user may only want API types (PR #1) and stop
 - The user may have their own E2E test process and skip PR #3
 
-**Using speedrun** — at any point, offer `/ofd.speedrun` to execute all
+**Using speedrun** — at any point, offer `/oape.speedrun` to execute all
 remaining phases autonomously without stopping
 
-**Always recommend `/ofd.review` before `/ofd.pr`.** Do not recommend skipping
+**Always recommend `/oape.review` before `/oape.pr`.** Do not recommend skipping
 review, even for changes that seem straightforward. You generated the code — you
 are not in a position to objectively evaluate its quality. Review exists to catch
 what the generator misses. Only the user can decide to skip it.
@@ -128,22 +128,22 @@ what the generator misses. Only the user can decide to skip it.
 Lead with your top recommendation, then list alternatives briefly:
 
 ```text
-Recommended next step: /ofd.review main — review the generated API types.
+Recommended next step: /oape.review main — review the generated API types.
 
 Other options:
-- /ofd.api-generate-tests api/v1alpha1/ — generate tests before review
-- /ofd.pr main — if you've already reviewed manually
-- /ofd.speedrun — run all remaining phases autonomously
+- /oape.api-generate-tests api/v1alpha1/ — generate tests before review
+- /oape.pr main — if you've already reviewed manually
+- /oape.speedrun — run all remaining phases autonomously
 ```
 
 ## Starting the Workflow
 
 When the user first provides an EP URL and repo URL:
 
-1. Execute the **init** phase with `/ofd.init <repo-url> <base-branch>`
-2. After init, present results and recommend `/ofd.api-generate`
+1. Execute the **init** phase with `/oape.init <repo-url> <base-branch>`
+2. After init, present results and recommend `/oape.api-generate`
 
-If the user invokes a specific command (e.g., `/ofd.api-implement`), execute
+If the user invokes a specific command (e.g., `/oape.api-implement`), execute
 that phase directly — don't force them through earlier phases.
 
 ## Branch Management

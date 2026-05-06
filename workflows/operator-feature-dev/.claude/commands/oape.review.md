@@ -1,4 +1,4 @@
-# /ofd.review - Production-grade code review with auto-fix
+# /oape.review - Production-grade code review with auto-fix
 
 ## Purpose
 
